@@ -1,0 +1,15 @@
+<svg width="1920" height="56" viewBox="0 0 1920 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="20.6923" width="1920" height="35.3077" fill="url(#paint0_linear_2_17)"/>
+<ellipse cx="960" cy="20.1731" rx="960" ry="19.2115" fill="url(#paint1_radial_2_17)"/>
+<defs>
+<linearGradient id="paint0_linear_2_17" x1="0" y1="38.3462" x2="1920" y2="38.3462" gradientUnits="userSpaceOnUse">
+<stop/>
+<stop offset="0.504407" stop-color="#181818"/>
+<stop offset="1"/>
+</linearGradient>
+<radialGradient id="paint1_radial_2_17" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(955 9.26924) scale(1354 27.0963)">
+<stop/>
+<stop offset="1" stop-color="#181818"/>
+</radialGradient>
+</defs>
+</svg>
