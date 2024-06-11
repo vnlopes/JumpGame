@@ -10,14 +10,26 @@
     .place {
       transition: left 0.3s ease; /* Transição suave para left */
       position: absolute;
-      left: 10px; /* Inicializa a posição à esquerda */
+      width: 130px;
+      height: 15px;
+      background-color: white;
+      border-radius: 5px;
+      left: 50%; /* Inicializa a posição no meio */
+      transform: translateX(-50%); /* Centraliza a div horizontalmente */
+    }
+    .bola {
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      position: absolute;
+      border-radius: 50%;
     }
   </style>
 </head>
 <body class="w-full flex justify-center min-h-screen bg-gradient-to-t from-[#161616] select-none to-[#010101]">
   <main class="max-w-[1920px] w-full h-screen relative flex flex-col items-center">
     <header class="max-w-[1920px] w-full h-[150px] flex items-center justify-between px-6">
-      <img src="/resources/images/pause.svg" alt="" />
+      <img src="resources/images/pause.svg" alt="" />
       <div class="h-full flex flex-col justify-center items-center">
         <span class="font-bold text-4xl text-white">Level</span>
         <span class="font-bold text-4xl text-white">1</span>
@@ -26,13 +38,14 @@
     </header>
     <main class="w-full h-full flex flex-col justify-center items-center">
       <section class="w-full h-[20px] relative mt-[200px] justify-center flex">
-        <div class="place absolute w-[130px] h-[15px] rounded bg-white"></div>
+        <div class="place"></div>
       </section>
+      <div class="bola"></div> <!-- Div da bola branca -->
     </main>
     <footer class="absolute bottom-0">
-      <img src="/resources/images/footer.svg" alt="" />
+      <img src="resources/images/footer.svg" alt="" />
     </footer>
   </main>
-  <script src="/functions/index.js"></script>
+  <script src="functions/index.js"></script> <!-- Script para o movimento da div 'place' -->
 </body>
 </html>
