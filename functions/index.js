@@ -45,7 +45,6 @@ const showGameOverMessage = () => {
     font-size: 48px;
     font-weight: bold;
     color: white;
-    background-color: red;
     padding: 20px;
     border-radius: 10px;
     z-index: 10; /* Ensure it's on top of other elements */
@@ -54,10 +53,23 @@ const showGameOverMessage = () => {
 };
 
 
+const isBallTouchingGround = () => {
+  return bolaY === window.innerHeight - bola.offsetHeight;
+};
+
+
 
 const update = () => {
   const placeRect = place.getBoundingClientRect();
   const bolaRect = bola.getBoundingClientRect();
+
+   // Se a bola tocar no chão, faça algo
+   if (isBallTouchingGround()) {
+    // Faça algo aqui, como parar o jogo ou reiniciar
+    showGameOverMessage ()
+
+    return
+  }
 
   if (bolaRect.bottom >= placeRect.top &&
     bolaRect.left >= placeRect.left &&
@@ -68,15 +80,15 @@ const update = () => {
 
     // Aplicar salto lateral
     if (bolaX > j + place.offsetWidth / 2) {
-      speedX = 5; // Salto para a direita
+      speedX = 4; // Salto para a direita
     } else {
-      speedX = -5; // Salto para a esquerda
+      speedX = -4; // Salto para a esquerda
     }
   } else {
     // Se a bola não está mais sobre a place, continuar caindo
     isJumping = false;
     speedY += gravity;
-  }
+  } 
 
   bolaX += speedX; // Atualizar a coordenada X da bola
 
@@ -105,7 +117,7 @@ const update = () => {
 
   bola.style.top = bolaY + "px";
   bola.style.left = bolaX + "px";
-
+  
   requestAnimationFrame(update);
 };
 
