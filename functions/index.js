@@ -127,6 +127,30 @@ window.addEventListener("resize", () => {
   place.style.left = j + "px";
 });
 
+place.style.left = j + "px";
+bola.style.left = `${j + place.offsetWidth / 2}px`;
+
+update();
+
+let touchStartX = 0;
+let touchMoveX = 0;
+
+place.addEventListener('touchstart', (event) => {
+  touchStartX = event.touches[0].clientX;
+});
+
+place.addEventListener('touchmove', (event) => {
+  touchMoveX = event.touches[0].clientX;
+  const diffX = touchMoveX - touchStartX;
+  j += diffX;
+  place.style.left = j + "px";
+  touchStartX = touchMoveX;
+});
+
+place.addEventListener('touchend', () => {
+  // Lógica adicional após o término do toque, se necessário
+});
+
 addEventListener("keydown", (event) => {
   const keyName = event.key;
 
@@ -136,9 +160,3 @@ addEventListener("keydown", (event) => {
     moveRight();
   }
 });
-
-place.style.left = j + "px";
-bola.style.left = `${j + place.offsetWidth / 2}px`;
-
-update();
-
