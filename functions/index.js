@@ -33,13 +33,15 @@ const moveLeft = () => {
 };
 
 const showGameOverMessage = () => {
+
+  const receiveBox = document.createElement('div');
+  receiveBox.classList.add('flex', 'flex-col', 'items-center', 'absolute', 'top-[50%]', 'left-[50%]', 'gap-6');
+  receiveBox.style = 'transform: translate(-50%, -50%);'
+  document.body.appendChild(receiveBox);
+
   const gameOverMessage = document.createElement("div");
   gameOverMessage.textContent = "Você perdeu!";
   gameOverMessage.style.cssText = `
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-size: 48px;
     font-weight: bold;
     color: white;
@@ -47,7 +49,28 @@ const showGameOverMessage = () => {
     border-radius: 10px;
     z-index: 10;
   `;
-  document.body.appendChild(gameOverMessage);
+  receiveBox.appendChild(gameOverMessage);
+  
+  const butt = createElement('img')
+  butt.src = '/resources/images/restart.svg'
+  restart.appendChild(butt)
+  
+  const restart = document.createElement("div");
+  restart.style = `
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 10;
+  cursor: pointer;
+  `;
+  receiveBox.appendChild(restart);
+  
+
+  restart.addEventListener('click', () => {
+    location.reload();
+  })
+
 };
 
 const isBallTouchingGround = () => {
