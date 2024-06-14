@@ -147,9 +147,9 @@ place.addEventListener("touchend", () => {
 addEventListener("keydown", (event) => {
   const keyName = event.key;
 
-  if (keyName === "ArrowLeft") {
+  if (keyName === "a" || keyName === "A" || keyName === "ArrowLeft") {
     moveLeft();
-  } else if (keyName === "ArrowRight") {
+  } else if (keyName === "d" || keyName === "D" || keyName === "ArrowRight") {
     moveRight();
   }
 });
